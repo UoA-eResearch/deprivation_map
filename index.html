@@ -8,6 +8,7 @@
         margin: 0;
         height: 100%;
         width: 100%;
+        background-color: #a3ccff;
       }
     </style>
     <script src="https://openlayers.org/en/v3.19.1/build/ol-debug.js" type="text/javascript"></script>
@@ -61,7 +62,9 @@
         ],
         view: new ol.View({
           center: ol.proj.fromLonLat([173, -40]),
-          zoom: 6
+          zoom: 6,
+          minZoom: 6,
+          extent: [17745294.397799145, -6212398.735764966, 21273479.234843332, -3501802.3644446055]
         })
       });
       var layerSwitcher = new ol.control.LayerSwitcher({
