@@ -28,6 +28,7 @@
         "ACC": "acc",
         "NZIMD": "nzimd",
       }
+      var extent = [17745294.397799145, -6212398.735764966, 21273479.234843332, -3501802.3644446055];
       var ol_layers = []
       for (var l in layers) {
         var machine_name = layers[l];
@@ -37,6 +38,7 @@
           source: new ol.source.XYZ({
             url: '/tiles/' + machine_name + '/{z}/{x}/{y}.png'
           }),
+          extent: extent,
           opacity: 1
         }))
       }
@@ -55,6 +57,7 @@
                 source: new ol.source.Stamen({
                   layer: 'toner-labels',
                 }),
+                extent: extent,
                 opacity: .5
               })
             ]
@@ -64,7 +67,7 @@
           center: ol.proj.fromLonLat([173, -40]),
           zoom: 6,
           minZoom: 6,
-          extent: [17745294.397799145, -6212398.735764966, 21273479.234843332, -3501802.3644446055]
+          extent: extent
         })
       });
       var layerSwitcher = new ol.control.LayerSwitcher({
