@@ -4,7 +4,7 @@
 `git clone https://github.com/TileStache/TileStache.git`  
 `cd TileStache`  
 `sudo python setup.py install`  
-`sudo apt-get install redis-server apache2`  
+`sudo apt-get install redis-server apache2 libapache2-mod-python`  
 `sudo pip install redis mapnik`  
 
 #Config
