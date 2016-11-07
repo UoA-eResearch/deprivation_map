@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir seed_progress
+for i in acc crime edu emp hlth house income nzimd;do
+  echo $i
+  tilestache-seed.py --config tilestache.cfg -b -30 161 -50 179.9 11 12 13 -l $i -q --progress-file=seed_progress/$i.json &
+done
+echo all jobs started
