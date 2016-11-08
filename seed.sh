@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir seed_progress
-for c in BuPu OrRd;do
+for c in BuPu OrRd RdYlGn;do
   for i in AccRank CrimeRank EduRank EmpRank HlthRank HouseRank IncomeRank NZIMDRank;do
     name=${c}_${i}
     echo $name
