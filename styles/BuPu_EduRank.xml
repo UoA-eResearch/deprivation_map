@@ -1,0 +1,41 @@
+<Map srs="+init=epsg:3857" background-color="transparent">
+	<Style name="BuPu_EduRank">
+		<Rule>
+			<Filter>[EduRank] &gt; 0</Filter>
+			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<PolygonSymbolizer fill="#edf8fb"></PolygonSymbolizer>
+		</Rule>
+		<Rule>
+			<Filter>[EduRank] &gt; 1000</Filter>
+			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<PolygonSymbolizer fill="#bfd3e6"></PolygonSymbolizer>
+		</Rule>
+		<Rule>
+			<Filter>[EduRank] &gt; 2000</Filter>
+			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<PolygonSymbolizer fill="#9ebcda"></PolygonSymbolizer>
+		</Rule>
+		<Rule>
+			<Filter>[EduRank] &gt; 3000</Filter>
+			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<PolygonSymbolizer fill="#8c96c6"></PolygonSymbolizer>
+		</Rule>
+		<Rule>
+			<Filter>[EduRank] &gt; 4000</Filter>
+			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<PolygonSymbolizer fill="#8856a7"></PolygonSymbolizer>
+		</Rule>
+		<Rule>
+			<Filter>[EduRank] &gt; 5000</Filter>
+			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<PolygonSymbolizer fill="#810f7c"></PolygonSymbolizer>
+		</Rule>
+	</Style>
+	<Layer name="layer" srs="+init=epsg:3857">
+		<StyleName>BuPu_EduRank</StyleName>
+		<Datasource>
+			<Parameter name="file">../nzimddata_3857/NZIMD_3857.shp</Parameter>
+			<Parameter name="type">shape</Parameter>
+		</Datasource>
+	</Layer>
+</Map>

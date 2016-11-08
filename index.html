@@ -19,15 +19,16 @@
     <div id="map" class="map"></div>
     <script type="text/javascript">
       var layers = {
-        "Income": "income",
-        "Housing": "house",
-        "Health": "hlth",
-        "Employment": "emp",
-        "Education": "edu",
-        "Crime": "crime",
-        "ACC": "acc",
-        "NZIMD": "nzimd",
+        "Income": "IncomeRank",
+        "Housing": "HouseRank",
+        "Health": "HlthRank",
+        "Employment": "EmpRank",
+        "Education": "EduRank",
+        "Crime": "CrimeRank",
+        "ACC": "AccRank",
+        "NZIMD": "NZIMDRank",
       }
+      var color = 'BuPu';
       var extent = [17745294.397799145, -6212398.735764966, 21273479.234843332, -3501802.3644446055];
       var ol_layers = []
       for (var l in layers) {
@@ -36,7 +37,7 @@
           title: l,
           type: 'base',
           source: new ol.source.XYZ({
-            url: '/tiles/' + machine_name + '/{z}/{x}/{y}.png'
+            url: '/tiles/' + color + '_' + machine_name + '/{z}/{x}/{y}.png'
           }),
           extent: extent,
           opacity: 1
