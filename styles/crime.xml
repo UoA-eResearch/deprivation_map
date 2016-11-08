@@ -2,32 +2,32 @@
   <Style name="Style">
     <Rule>
       <Filter>[CrimeRank] &lt; 6000</Filter>
-      <PolygonSymbolizer fill="#10F500" />
+      <PolygonSymbolizer fill="#810f7c" />
       <LineSymbolizer stroke="black" stroke-width="0.1" />
     </Rule>
     <Rule>
       <Filter>[CrimeRank] &lt; 5000</Filter>
-      <PolygonSymbolizer fill="#6BF100" />
+      <PolygonSymbolizer fill="#8856a7" />
       <LineSymbolizer stroke="black" stroke-width="0.1" />
     </Rule>
     <Rule>
       <Filter>[CrimeRank] &lt; 4000</Filter>
-      <PolygonSymbolizer fill="#C4EE00" />
+      <PolygonSymbolizer fill="#8c96c6" />
       <LineSymbolizer stroke="black" stroke-width="0.1" />
     </Rule>
     <Rule>
       <Filter>[CrimeRank] &lt; 3000</Filter>
-      <PolygonSymbolizer fill="#EBBB00" />
+      <PolygonSymbolizer fill="#9ebcda" />
       <LineSymbolizer stroke="black" stroke-width="0.1" />
     </Rule>
     <Rule>
       <Filter>[CrimeRank] &lt; 2000</Filter>
-      <PolygonSymbolizer fill="#E86000" />
+      <PolygonSymbolizer fill="#bfd3e6" />
       <LineSymbolizer stroke="black" stroke-width="0.1" />
     </Rule>
     <Rule>
       <Filter>[CrimeRank] &lt; 1000</Filter>
-      <PolygonSymbolizer fill="#E50700" />
+      <PolygonSymbolizer fill="#edf8fb" />
       <LineSymbolizer stroke="black" stroke-width="0.1" />
     </Rule>
   </Style>
