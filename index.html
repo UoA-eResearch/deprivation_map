@@ -10,6 +10,20 @@
         width: 100%;
         background-color: #a3ccff;
       }
+      .colorpicker {
+        top: 1em;
+        right: .5em;
+      }
+      .colorpicker button {
+        width: auto;
+        display: inline-block;
+        padding: 1px 6px;
+      }
+      .colorpicker .block {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+      }
     </style>
     <script src="https://openlayers.org/en/v3.19.1/build/ol-debug.js" type="text/javascript"></script>
     <script src="http://rawgit.com/walkermatt/ol3-layerswitcher/master/src/ol3-layerswitcher.js" type="text/javascript"></script>
@@ -35,6 +49,7 @@
         var machine_name = layers[l];
         ol_layers.push(new ol.layer.Tile({
           title: l,
+          machine_name: machine_name,
           type: 'base',
           source: new ol.source.XYZ({
             url: '/tiles/' + color + '_' + machine_name + '/{z}/{x}/{y}.png'
@@ -43,10 +58,60 @@
           opacity: 1
         }))
       }
+      var ToggleColorControl = function(opt_options) {
+
+        var options = opt_options || {};
+
+        colors = {
+          'BuPu': ['#edf8fb','#bfd3e6','#9ebcda','#8c96c6','#8856a7','#810f7c'],
+          'OrRd': ['#fef0d9','#fdd49e','#fdbb84','#fc8d59','#e34a33','#b30000']
+        }
+        
+        var buttons = []
+        
+        var parent = document.createElement('div');
+        parent.className = 'colorpicker ol-unselectable ol-control';
+        
+        var handleClick = function() {
+          var color = this.id;
+          var layers = map.getLayers().getArray()[0].getLayers().getArray();
+          for (var i in layers) {
+            var l = layers[i];
+            var machine_name = l.getProperties().machine_name;
+            var new_source = new ol.source.XYZ({
+              url: '/tiles/' + color + '_' + machine_name + '/{z}/{x}/{y}.png'
+            })
+            l.setSource(new_source);
+          }
+        };
+        
+        for (var c in colors) {
+          var button = document.createElement('button');
+          button.id = c;
+          for (var i in colors[c]) {
+            var block = document.createElement('div')
+            block.className = 'block';
+            block.style.backgroundColor = colors[c][i];
+            button.appendChild(block);
+          }
+          button.addEventListener('click', handleClick, false);
+          button.addEventListener('touchstart', handleClick, false);
+          parent.appendChild(button);
+        }
+
+        ol.control.Control.call(this, {
+          element: parent,
+          target: options.target
+        });
+
+      };
+      ol.inherits(ToggleColorControl, ol.control.Control);
       var map = new ol.Map({
         controls: ol.control.defaults().extend([
           new ol.control.ScaleLine(),
-          new ol.control.ZoomSlider()
+          new ol.control.ZoomSlider(),
+          new ol.control.LayerSwitcher(),
+          new ToggleColorControl()
         ]),
         target: 'map',
         layers: [
@@ -76,10 +141,6 @@
           extent: extent
         })
       });
-      var layerSwitcher = new ol.control.LayerSwitcher({
-        tipLabel: 'Legend' // Optional label for button
-      });
-      map.addControl(layerSwitcher);
     </script>
   </body>
 </html>
