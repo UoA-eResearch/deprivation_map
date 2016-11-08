@@ -44,6 +44,10 @@
         }))
       }
       var map = new ol.Map({
+        controls: ol.control.defaults().extend([
+          new ol.control.ScaleLine(),
+          new ol.control.ZoomSlider()
+        ]),
         target: 'map',
         layers: [
           new ol.layer.Group({
@@ -68,6 +72,7 @@
           center: ol.proj.fromLonLat([173, -40]),
           zoom: 6,
           minZoom: 6,
+          maxZoom: 19,
           extent: extent
         })
       });
