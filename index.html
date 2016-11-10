@@ -115,6 +115,17 @@
           new ToggleColorControl()
         ]),
         target: 'map',
+        interactions: ol.interaction.defaults().extend([
+          new ol.interaction.DragAndDrop({
+            formatConstructors: [
+              ol.format.GPX,
+              ol.format.GeoJSON,
+              ol.format.IGC,
+              ol.format.KML,
+              ol.format.TopoJSON
+            ]
+          })
+        ]),
         layers: [
           new ol.layer.Group({
             'title': 'Base maps',
@@ -127,6 +138,17 @@
                 title: 'Residential area',
                 source: new ol.source.XYZ({
                   url: 'tiles/LINZ_Residential/{z}/{x}/{y}.png',
+                  attributions: '<br>Residential area data sourced from the <a href="https://data.linz.govt.nz/layer/325-nz-residential-area-polygons-topo-150k/">LINZ Data Service</a>'
+                }),
+                extent: extent,
+                visible: false
+              }),
+              new ol.layer.Vector({
+                title: 'DHB Zones',
+                source: new ol.source.Vector({
+                  url: 'nz_dhb/nz-district-health-boards-2012.kml',
+                  attributions: '<br>DHB area data sourced from the <a href="https://koordinates.com/layer/4324-nz-district-health-boards-2012/">Ministry of Health</a>',
+                  format: new ol.format.KML()
                 }),
                 extent: extent,
                 visible: false
