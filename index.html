@@ -124,6 +124,13 @@
             'title': 'Overlays',
             layers: [
               new ol.layer.Tile({
+                title: 'Residential area',
+                source: new ol.source.XYZ({
+                  url: 'tiles/LINZ_Residential/{z}/{x}/{y}.png',
+                }),
+                visible: false
+              }),
+              new ol.layer.Tile({
                 title: 'City labels',
                 source: new ol.source.Stamen({
                   layer: 'toner-labels',

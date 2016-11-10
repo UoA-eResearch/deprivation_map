@@ -72,7 +72,15 @@ for c in colors:
         'mapfile': 'styles/{}.xml'.format(name)
       }
     }
-    cfg['layers'] = layers
+
+layers['LINZ_Residential'] = {
+  "provider": {
+    "name": "mapnik",
+    "mapfile": "styles/LINZ_Residential.xml"
+  }
+}
+
+cfg['layers'] = layers
 
 with open('tilestache.cfg', 'w') as f:
   json.dump(cfg, f, indent=4)

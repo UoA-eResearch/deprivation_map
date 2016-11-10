@@ -1,0 +1,15 @@
+<Map srs="+init=epsg:3857" background-color="gray">
+    <Style name="eraser" comp-op="dst-out">
+		<Rule>
+			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<PolygonSymbolizer fill="white"></PolygonSymbolizer>
+		</Rule>
+	</Style>
+	<Layer name="layer" srs="+init=epsg:3857">
+		<StyleName>eraser</StyleName>
+		<Datasource>
+			<Parameter name="file">../nz_res_3857/nz-residential-area-polygons-topo-150k.shp</Parameter>
+			<Parameter name="type">shape</Parameter>
+		</Datasource>
+	</Layer>
+</Map>
