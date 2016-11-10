@@ -2,32 +2,32 @@
 	<Style name="OrRd_IncomeRank">
 		<Rule>
 			<Filter>[IncomeRank] &gt; 0</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fef0d9"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[IncomeRank] &gt; 1000</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fdd49e"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[IncomeRank] &gt; 2000</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fdbb84"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[IncomeRank] &gt; 3000</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fc8d59"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[IncomeRank] &gt; 4000</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#e34a33"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[IncomeRank] &gt; 5000</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#b30000"></PolygonSymbolizer>
 		</Rule>
 	</Style>

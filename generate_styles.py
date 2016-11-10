@@ -23,7 +23,7 @@ for c in colors:
         },
         'LineSymbolizer': {
           '@stroke': 'black',
-          '@stroke-width': '0.1'
+          '@stroke-width': '1'
         }
       }
       rules.append(r)

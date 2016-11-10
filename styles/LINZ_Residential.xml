@@ -1,13 +1,13 @@
 <Map srs="+init=epsg:3857" background-color="transparent">
     <Style name="eraser" comp-op="dst-out">
 		<Rule>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="white"></PolygonSymbolizer>
 		</Rule>
 	</Style>
     <Style name="fill">
       <Rule>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="gray"></PolygonSymbolizer>
 		</Rule>
 	</Style>

@@ -2,32 +2,32 @@
 	<Style name="RdYlGn_AccRank">
 		<Rule>
 			<Filter>[AccRank] &gt; 0</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#d73027"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[AccRank] &gt; 1000</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fc8d59"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[AccRank] &gt; 2000</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fee08b"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[AccRank] &gt; 3000</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#d9ef8b"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[AccRank] &gt; 4000</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#91cf60"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[AccRank] &gt; 5000</Filter>
-			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#1a9850"></PolygonSymbolizer>
 		</Rule>
 	</Style>
