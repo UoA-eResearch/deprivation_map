@@ -7,4 +7,7 @@ for c in BuPu OrRd RdYlGn;do
     tilestache-seed.py --config tilestache.cfg -b -30 161 -50 179.9 9 10 11 12 13 -l $name -q --progress-file=seed_progress/$name.json &
   done
 done
+name=LINZ_Residential
+echo $name
+tilestache-seed.py --config tilestache.cfg -b -30 161 -50 179.9 9 10 11 12 13 -l $name -q --progress-file=seed_progress/$name.json &
 echo all jobs started
