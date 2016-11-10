@@ -1,11 +1,24 @@
-<Map srs="+init=epsg:3857" background-color="gray">
+<Map srs="+init=epsg:3857" background-color="transparent">
     <Style name="eraser" comp-op="dst-out">
 		<Rule>
 			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="white"></PolygonSymbolizer>
 		</Rule>
 	</Style>
-	<Layer name="layer" srs="+init=epsg:3857">
+    <Style name="fill">
+      <Rule>
+			<LineSymbolizer stroke-width="0.1" stroke="black"></LineSymbolizer>
+			<PolygonSymbolizer fill="gray"></PolygonSymbolizer>
+		</Rule>
+	</Style>
+    <Layer name="nzimd" srs="+init=epsg:3857">
+		<StyleName>fill</StyleName>
+		<Datasource>
+			<Parameter name="file">../nzimddata_3857/NZIMD_3857.shp</Parameter>
+			<Parameter name="type">shape</Parameter>
+		</Datasource>
+	</Layer>
+	<Layer name="residential" srs="+init=epsg:3857">
 		<StyleName>eraser</StyleName>
 		<Datasource>
 			<Parameter name="file">../nz_res_3857/nz-residential-area-polygons-topo-150k.shp</Parameter>
