@@ -107,6 +107,15 @@
 
       };
       ol.inherits(ToggleColorControl, ol.control.Control);
+      var dragAndDropInteraction = new ol.interaction.DragAndDrop({
+        formatConstructors: [
+          ol.format.GPX,
+          ol.format.GeoJSON,
+          ol.format.IGC,
+          ol.format.KML,
+          ol.format.TopoJSON
+        ]
+      });
       var map = new ol.Map({
         controls: ol.control.defaults().extend([
           new ol.control.ScaleLine(),
@@ -116,15 +125,7 @@
         ]),
         target: 'map',
         interactions: ol.interaction.defaults().extend([
-          new ol.interaction.DragAndDrop({
-            formatConstructors: [
-              ol.format.GPX,
-              ol.format.GeoJSON,
-              ol.format.IGC,
-              ol.format.KML,
-              ol.format.TopoJSON
-            ]
-          })
+          dragAndDropInteraction
         ]),
         layers: [
           new ol.layer.Group({
@@ -171,6 +172,20 @@
           maxZoom: 19,
           extent: extent
         })
+      });
+      dragAndDropInteraction.on('addfeatures', function(event) {
+        console.log(event);
+        var vectorSource = new ol.source.Vector({
+          features: event.features
+        });
+        map.addLayer(new ol.layer.Vector({
+          title: event.file.name,
+          source: vectorSource,
+          //style: styleFunction
+        }));
+        map.getView().fit(
+            vectorSource.getExtent(), /** @type {ol.Size} */ (map.getSize())
+        );
       });
     </script>
   </body>
