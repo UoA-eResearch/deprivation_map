@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="https://openlayers.org/en/v3.19.1/css/ol.css" type="text/css">
-    <link rel="stylesheet" href="http://rawgit.com/walkermatt/ol3-layerswitcher/master/src/ol3-layerswitcher.css" type="text/css">
+    <link rel="stylesheet" href="http://cdn.rawgit.com/walkermatt/ol3-layerswitcher/master/src/ol3-layerswitcher.css" type="text/css">
     <style>
       html, body, .map {
         margin: 0;
@@ -26,12 +26,14 @@
       }
     </style>
     <script src="https://openlayers.org/en/v3.19.1/build/ol-debug.js" type="text/javascript"></script>
-    <script src="http://rawgit.com/walkermatt/ol3-layerswitcher/master/src/ol3-layerswitcher.js" type="text/javascript"></script>
+    <script src="http://cdn.rawgit.com/walkermatt/ol3-layerswitcher/master/src/ol3-layerswitcher.js" type="text/javascript"></script>
     <title>New Zealand Index of Multiple Deprivation Map</title>
   </head>
   <body>
     <div id="map" class="map"></div>
     <script type="text/javascript">
+      // Generate layers
+
       var layers = {
         "Income": "IncomeRank",
         "Housing": "HouseRank",
@@ -44,10 +46,11 @@
       }
       var color = 'BuPu';
       var extent = [17745294.397799145, -6212398.735764966, 21273479.234843332, -3501802.3644446055];
+
       var ol_layers = []
       for (var l in layers) {
         var machine_name = layers[l];
-        ol_layers.push(new ol.layer.Tile({
+        var layer = new ol.layer.Tile({
           title: l,
           machine_name: machine_name,
           //type: 'base',
@@ -57,8 +60,20 @@
           extent: extent,
           opacity: 1,
           visible: l == 'NZIMD'
-        }))
+        });
+        ol_layers.push(layer);
+        var setBlendMode = function(evt) {
+          evt.context.globalCompositeOperation = 'multiply';
+        }
+        var resetBlendMode = function(evt) {
+          evt.context.globalCompositeOperation = 'source-over';
+        }
+        layer.on('precompose', setBlendMode);
+        layer.on('postcompose', resetBlendMode);
       }
+
+      // Setup color control
+
       var ToggleColorControl = function(opt_options) {
 
         var options = opt_options || {};
@@ -109,6 +124,7 @@
 
       };
       ol.inherits(ToggleColorControl, ol.control.Control);
+
       var dragAndDropInteraction = new ol.interaction.DragAndDrop({
         formatConstructors: [
           ol.format.GPX,
@@ -118,8 +134,10 @@
           ol.format.TopoJSON
         ]
       });
+
       var overlayGroup = new ol.layer.Group({
         'title': 'Overlays',
+        zIndex: 10,
         layers: [
           new ol.layer.Tile({
             title: 'Residential area',
@@ -150,11 +168,14 @@
           })
         ]
       });
+
+      var layerswitcher = new ol.control.LayerSwitcher();
+
       var map = new ol.Map({
         controls: ol.control.defaults().extend([
           new ol.control.ScaleLine(),
           new ol.control.ZoomSlider(),
-          new ol.control.LayerSwitcher(),
+          layerswitcher,
           new ToggleColorControl()
         ]),
         target: 'map',
@@ -176,6 +197,7 @@
           extent: extent
         })
       });
+
       dragAndDropInteraction.on('addfeatures', function(event) {
         console.log(event);
         var vectorSource = new ol.source.Vector({
