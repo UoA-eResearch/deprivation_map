@@ -50,12 +50,13 @@
         ol_layers.push(new ol.layer.Tile({
           title: l,
           machine_name: machine_name,
-          type: 'base',
+          //type: 'base',
           source: new ol.source.XYZ({
             url: '/tiles/' + color + '_' + machine_name + '/{z}/{x}/{y}.png'
           }),
           extent: extent,
-          opacity: 1
+          opacity: 1,
+          visible: l == 'NZIMD'
         }))
       }
       var ToggleColorControl = function(opt_options) {
@@ -78,6 +79,7 @@
           var layers = map.getLayers().getArray()[0].getLayers().getArray();
           for (var i in layers) {
             var l = layers[i];
+            if (!l.getVisible()) continue;
             var machine_name = l.getProperties().machine_name;
             var new_source = new ol.source.XYZ({
               url: '/tiles/' + color + '_' + machine_name + '/{z}/{x}/{y}.png'
@@ -116,6 +118,38 @@
           ol.format.TopoJSON
         ]
       });
+      var overlayGroup = new ol.layer.Group({
+        'title': 'Overlays',
+        layers: [
+          new ol.layer.Tile({
+            title: 'Residential area',
+            source: new ol.source.XYZ({
+              url: 'tiles/LINZ_Residential/{z}/{x}/{y}.png',
+              attributions: '<br>Residential area data sourced from the <a href="https://data.linz.govt.nz/layer/325-nz-residential-area-polygons-topo-150k/">LINZ Data Service</a>'
+            }),
+            extent: extent,
+            visible: false
+          }),
+          new ol.layer.Vector({
+            title: 'DHB Zones',
+            source: new ol.source.Vector({
+              url: 'nz_dhb/nz-district-health-boards-2012.kml',
+              attributions: '<br>DHB area data sourced from the <a href="https://koordinates.com/layer/4324-nz-district-health-boards-2012/">Ministry of Health</a>',
+              format: new ol.format.KML()
+            }),
+            extent: extent,
+            visible: false
+          }),
+          new ol.layer.Tile({
+            title: 'City labels',
+            source: new ol.source.Stamen({
+              layer: 'toner-labels',
+            }),
+            extent: extent,
+            opacity: .5
+          })
+        ]
+      });
       var map = new ol.Map({
         controls: ol.control.defaults().extend([
           new ol.control.ScaleLine(),
@@ -132,38 +166,7 @@
             'title': 'Base maps',
             layers: ol_layers
           }),
-          new ol.layer.Group({
-            'title': 'Overlays',
-            layers: [
-              new ol.layer.Tile({
-                title: 'Residential area',
-                source: new ol.source.XYZ({
-                  url: 'tiles/LINZ_Residential/{z}/{x}/{y}.png',
-                  attributions: '<br>Residential area data sourced from the <a href="https://data.linz.govt.nz/layer/325-nz-residential-area-polygons-topo-150k/">LINZ Data Service</a>'
-                }),
-                extent: extent,
-                visible: false
-              }),
-              new ol.layer.Vector({
-                title: 'DHB Zones',
-                source: new ol.source.Vector({
-                  url: 'nz_dhb/nz-district-health-boards-2012.kml',
-                  attributions: '<br>DHB area data sourced from the <a href="https://koordinates.com/layer/4324-nz-district-health-boards-2012/">Ministry of Health</a>',
-                  format: new ol.format.KML()
-                }),
-                extent: extent,
-                visible: false
-              }),
-              new ol.layer.Tile({
-                title: 'City labels',
-                source: new ol.source.Stamen({
-                  layer: 'toner-labels',
-                }),
-                extent: extent,
-                opacity: .5
-              })
-            ]
-          })
+          overlayGroup
         ],
         view: new ol.View({
           center: ol.proj.fromLonLat([173, -40]),
@@ -178,7 +181,7 @@
         var vectorSource = new ol.source.Vector({
           features: event.features
         });
-        map.addLayer(new ol.layer.Vector({
+        overlayGroup.getLayers().push(new ol.layer.Vector({
           title: event.file.name,
           source: vectorSource,
           //style: styleFunction
