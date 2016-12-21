@@ -153,9 +153,18 @@
             source: new ol.source.Vector({
               url: 'nz_dhb/nz-district-health-boards-2012.kml',
               attributions: '<br>DHB area data sourced from the <a href="https://koordinates.com/layer/4324-nz-district-health-boards-2012/">Ministry of Health</a>',
-              format: new ol.format.KML()
+              format: new ol.format.KML({extractStyles: false})
             }),
             extent: extent,
+            style: new ol.style.Style({
+              fill: new ol.style.Fill ({
+                color: "transparent"
+              }),
+              stroke: new ol.style.Stroke({
+                color: "blue",
+                width: 5
+              })
+            }),
             visible: false
           }),
           new ol.layer.Tile({
