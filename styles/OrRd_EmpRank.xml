@@ -6,29 +6,24 @@
 			<PolygonSymbolizer fill="#fef0d9"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[EmpRank] &gt; 1000</Filter>
+			<Filter>[EmpRank] &gt; 1200</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fdd49e"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[EmpRank] &gt; 2000</Filter>
+			<Filter>[EmpRank] &gt; 2400</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fdbb84"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[EmpRank] &gt; 3000</Filter>
+			<Filter>[EmpRank] &gt; 3600</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fc8d59"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[EmpRank] &gt; 4000</Filter>
+			<Filter>[EmpRank] &gt; 4800</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#e34a33"></PolygonSymbolizer>
-		</Rule>
-		<Rule>
-			<Filter>[EmpRank] &gt; 5000</Filter>
-			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
-			<PolygonSymbolizer fill="#b30000"></PolygonSymbolizer>
 		</Rule>
 	</Style>
 	<Layer name="layer" srs="+init=epsg:3857">

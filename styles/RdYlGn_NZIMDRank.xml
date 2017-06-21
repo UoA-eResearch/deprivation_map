@@ -6,29 +6,24 @@
 			<PolygonSymbolizer fill="#d73027"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[NZIMDRank] &gt; 1000</Filter>
+			<Filter>[NZIMDRank] &gt; 1200</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fc8d59"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[NZIMDRank] &gt; 2000</Filter>
+			<Filter>[NZIMDRank] &gt; 2400</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fee08b"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[NZIMDRank] &gt; 3000</Filter>
+			<Filter>[NZIMDRank] &gt; 3600</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#d9ef8b"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[NZIMDRank] &gt; 4000</Filter>
+			<Filter>[NZIMDRank] &gt; 4800</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#91cf60"></PolygonSymbolizer>
-		</Rule>
-		<Rule>
-			<Filter>[NZIMDRank] &gt; 5000</Filter>
-			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
-			<PolygonSymbolizer fill="#1a9850"></PolygonSymbolizer>
 		</Rule>
 	</Style>
 	<Layer name="layer" srs="+init=epsg:3857">

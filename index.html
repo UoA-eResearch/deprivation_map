@@ -8,11 +8,13 @@
         margin: 0;
         height: 100%;
         width: 100%;
-        background-color: #a3ccff;
+        background-color: #daeaff;
+		background-image: url("egg-shell.png");
       }
       .colorpicker {
-        top: 1em;
-        right: .5em;
+        top: .5em;
+        left: 3em;
+		right: auto;
       }
       .colorpicker button {
         width: auto;
@@ -24,6 +26,31 @@
         height: 10px;
         display: inline-block;
       }
+	  .logos {
+		position: absolute;
+		bottom: 0.5em;
+		left: 0.5em;
+		height: 3.5em;
+		background-color: rgba(255,255,255,.4);
+		border-radius: 4px;
+	  }
+	  .logos #fmhsLogo, #hrcLogo {
+		height: 2.5em;
+		margin: 0.5em;
+	  }
+	  .ol-scale-line.ol-unselectable{
+		left: 26em;
+	  }
+	  .ol-unselectable.ol-control.layer-switcher .panel{
+		display: block;
+		background-color: rgba(255,255,255,.4);
+	  }
+	  .ol-unselectable.ol-control.layer-switcher button{
+		display: none;
+	  }
+	  .ol-unselectable.ol-control.layer-switcher{
+		top: .5em;
+	  }
     </style>
     <script src="https://openlayers.org/en/v3.19.1/build/ol-debug.js" type="text/javascript"></script>
     <script src="https://cdn.rawgit.com/walkermatt/ol3-layerswitcher/master/src/ol3-layerswitcher.js" type="text/javascript"></script>
@@ -31,18 +58,22 @@
   </head>
   <body>
     <div id="map" class="map"></div>
+	<div id="logos" class="logos">
+	<img src="fmhsLogo.png" id="fmhsLogo" />
+	<img src="hrcLogo.png" id="hrcLogo" />
+	</div>
     <script type="text/javascript">
       // Generate layers
 
       var layers = {
-        "Income": "IncomeRank",
-        "Housing": "HouseRank",
-        "Health": "HlthRank",
-        "Employment": "EmpRank",
-        "Education": "EduRank",
-        "Crime": "CrimeRank",
         "Access": "AccRank",
-        "IMD": "NZIMDRank",
+        "Education": "EduRank",
+		"Health": "HlthRank",
+        "Housing": "HouseRank",
+        "Crime": "CrimeRank",
+		"Income": "IncomeRank",
+		"Employment": "EmpRank",
+        "IMD": "NZIMDRank"
       }
       var color = 'BuPu';
       var extent = [17745294.397799145, -6212398.735764966, 21273479.234843332, -3501802.3644446055];
@@ -79,9 +110,9 @@
         var options = opt_options || {};
 
         colors = {
-          'BuPu': ['#edf8fb','#bfd3e6','#9ebcda','#8c96c6','#8856a7','#810f7c'],
-          'OrRd': ['#fef0d9','#fdd49e','#fdbb84','#fc8d59','#e34a33','#b30000'],
-          'RdYlGn': ['#d73027','#fc8d59','#fee08b','#d9ef8b','#91cf60','#1a9850']
+          'BuPu': ['#edf8fb','#bfd3e6','#9ebcda','#8c96c6','#8856a7'],
+          'OrRd': ['#fef0d9','#fdd49e','#fdbb84','#fc8d59','#e34a33'],
+          'RdYlGn': ['#d73027','#fc8d59','#fee08b','#d9ef8b','#91cf60']
         }
         
         var buttons = []

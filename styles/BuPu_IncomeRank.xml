@@ -6,29 +6,24 @@
 			<PolygonSymbolizer fill="#edf8fb"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[IncomeRank] &gt; 1000</Filter>
+			<Filter>[IncomeRank] &gt; 1200</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#bfd3e6"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[IncomeRank] &gt; 2000</Filter>
+			<Filter>[IncomeRank] &gt; 2400</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#9ebcda"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[IncomeRank] &gt; 3000</Filter>
+			<Filter>[IncomeRank] &gt; 3600</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#8c96c6"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[IncomeRank] &gt; 4000</Filter>
+			<Filter>[IncomeRank] &gt; 4800</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#8856a7"></PolygonSymbolizer>
-		</Rule>
-		<Rule>
-			<Filter>[IncomeRank] &gt; 5000</Filter>
-			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
-			<PolygonSymbolizer fill="#810f7c"></PolygonSymbolizer>
 		</Rule>
 	</Style>
 	<Layer name="layer" srs="+init=epsg:3857">

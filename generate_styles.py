@@ -3,9 +3,9 @@ from xmltodict import unparse
 import json
 
 colors = {
-  'BuPu': ['#edf8fb','#bfd3e6','#9ebcda','#8c96c6','#8856a7','#810f7c'],
-  'OrRd': ['#fef0d9','#fdd49e','#fdbb84','#fc8d59','#e34a33','#b30000'],
-  'RdYlGn': ['#d73027','#fc8d59','#fee08b','#d9ef8b','#91cf60','#1a9850']
+  'BuPu': ['#edf8fb','#bfd3e6','#9ebcda','#8c96c6','#8856a7'],
+  'OrRd': ['#fef0d9','#fdd49e','#fdbb84','#fc8d59','#e34a33'],
+  'RdYlGn': ['#d73027','#fc8d59','#fee08b','#d9ef8b','#91cf60']
 }
 
 attributes = ["AccRank", "CrimeRank", "EduRank", "EmpRank", "HlthRank", "HouseRank", "IncomeRank", "NZIMDRank"]
@@ -13,7 +13,7 @@ attributes = ["AccRank", "CrimeRank", "EduRank", "EmpRank", "HlthRank", "HouseRa
 for c in colors:
   for a in attributes:
     rules = []
-    for i in range(0,6000,1000):
+    for i in range(0,6000,1200):
       r = {
         'Filter': {
           '#text': '[{}] > {}'.format(a, i)
