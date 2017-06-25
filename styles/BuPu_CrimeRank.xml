@@ -1,27 +1,27 @@
 <Map srs="+init=epsg:3857" background-color="transparent">
 	<Style name="BuPu_CrimeRank">
 		<Rule>
-			<Filter>[CrimeRank] &gt; 1191</Filter>
+			<Filter>[CrimeRank] &gt; 0</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#edf8fb"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[CrimeRank] &gt; 2383</Filter>
+			<Filter>[CrimeRank] &gt; 1191</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#bfd3e6"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[CrimeRank] &gt; 3575</Filter>
+			<Filter>[CrimeRank] &gt; 2383</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#9ebcda"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[CrimeRank] &gt; 4767</Filter>
+			<Filter>[CrimeRank] &gt; 3575</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#8c96c6"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[CrimeRank] &gt; 5958</Filter>
+			<Filter>[CrimeRank] &gt; 4767</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#8856a7"></PolygonSymbolizer>
 		</Rule>

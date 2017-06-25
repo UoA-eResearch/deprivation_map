@@ -1,27 +1,27 @@
 <Map srs="+init=epsg:3857" background-color="transparent">
 	<Style name="OrRd_AccRank">
 		<Rule>
-			<Filter>[AccRank] &gt; 1191</Filter>
+			<Filter>[AccRank] &gt; 0</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fef0d9"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[AccRank] &gt; 2383</Filter>
+			<Filter>[AccRank] &gt; 1191</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fdd49e"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[AccRank] &gt; 3575</Filter>
+			<Filter>[AccRank] &gt; 2383</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fdbb84"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[AccRank] &gt; 4767</Filter>
+			<Filter>[AccRank] &gt; 3575</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fc8d59"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[AccRank] &gt; 5958</Filter>
+			<Filter>[AccRank] &gt; 4767</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#e34a33"></PolygonSymbolizer>
 		</Rule>
