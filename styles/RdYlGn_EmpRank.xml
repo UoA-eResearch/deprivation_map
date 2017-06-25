@@ -1,27 +1,27 @@
 <Map srs="+init=epsg:3857" background-color="transparent">
 	<Style name="RdYlGn_EmpRank">
 		<Rule>
-			<Filter>[EmpRank] &gt; 0</Filter>
+			<Filter>[EmpRank] &gt; 1191</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#d73027"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[EmpRank] &gt; 1200</Filter>
+			<Filter>[EmpRank] &gt; 2383</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fc8d59"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[EmpRank] &gt; 2400</Filter>
+			<Filter>[EmpRank] &gt; 3575</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fee08b"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[EmpRank] &gt; 3600</Filter>
+			<Filter>[EmpRank] &gt; 4767</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#d9ef8b"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[EmpRank] &gt; 4800</Filter>
+			<Filter>[EmpRank] &gt; 5958</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#91cf60"></PolygonSymbolizer>
 		</Rule>

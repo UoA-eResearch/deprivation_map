@@ -9,17 +9,18 @@ colors = {
 }
 
 attributes = ["AccRank", "CrimeRank", "EduRank", "EmpRank", "HlthRank", "HouseRank", "IncomeRank", "NZIMDRank"]
+quintiles = [1191, 2383, 3575, 4767, 5958];
 
 for c in colors:
   for a in attributes:
     rules = []
-    for i in range(0,6000,1200):
+    for i in quintiles:
       r = {
         'Filter': {
           '#text': '[{}] > {}'.format(a, i)
         },
         'PolygonSymbolizer': {
-          '@fill': colors[c][i/1000]
+          '@fill': colors[c][i/1192]
         },
         'LineSymbolizer': {
           '@stroke': 'black',

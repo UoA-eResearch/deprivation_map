@@ -43,7 +43,7 @@
 	  }
 	  .ol-unselectable.ol-control.layer-switcher .panel{
 		display: block;
-		background-color: rgba(255,255,255,.4);
+		background-color: rgba(255,255,255,.8);
 	  }
 	  .ol-unselectable.ol-control.layer-switcher button{
 		display: none;
@@ -62,17 +62,24 @@
 	<img src="fmhsLogo.png" id="fmhsLogo" />
 	<img src="hrcLogo.png" id="hrcLogo" />
 	</div>
+	<li id="disclaimer">
+		<br><a>The results in this atlas are not official statistics. They have been created for research purposes from the Integrated Data Infrastructure (IDI), managed by Statistics New Zealand. The opinions, findings, recommendations, and conclusions expressed in this atlas are those of the authors, not Statistics NZ, or the University of Auckland.</a>
+		<br><a>Access to the anonymised data used in this study was provided by Statistics NZ under the security and confidentiality provisions of the Statistics Act 1975. Only people authorised by the Statistics Act 1975 are allowed to see data about a particular person, household, business, or organisation, and the results in this atlas have been confidentialised to protect these groups from identification and to keep their data safe.</a>
+		<br>Careful consideration has been given to the privacy, security, and confidentiality issues associated with using administrative and survey data in the IDI. Further detail can be found in the Privacy impact assessment for the Integrated Data Infrastructure available from <a href="http://www.stats.govt.nz/">.</a>
+	</li>
     <script type="text/javascript">
+	
+	  $("#map > div > div.ol-overlaycontainer-stopevent > div.ol-attribution.ol-unselectable.ol-control > ul > li:nth-child(3)").attr('li', $("disclaimer"));
+	
       // Generate layers
-
       var layers = {
-        "Access": "AccRank",
-        "Education": "EduRank",
-		"Health": "HlthRank",
-        "Housing": "HouseRank",
-        "Crime": "CrimeRank",
-		"Income": "IncomeRank",
-		"Employment": "EmpRank",
+        "Access Domain": "AccRank",
+        "Education Domain": "EduRank",
+		"Health Domain": "HlthRank",
+        "Housing Domain": "HouseRank",
+        "Crime Domain": "CrimeRank",
+		"Income Domain": "IncomeRank",
+		"Employment Domain": "EmpRank",
         "IMD": "NZIMDRank"
       }
       var color = 'BuPu';
@@ -102,9 +109,8 @@
         layer.on('precompose', setBlendMode);
         layer.on('postcompose', resetBlendMode);
       }
-
+	  
       // Setup color control
-
       var ToggleColorControl = function(opt_options) {
 
         var options = opt_options || {};

@@ -1,27 +1,27 @@
 <Map srs="+init=epsg:3857" background-color="transparent">
 	<Style name="OrRd_HouseRank">
 		<Rule>
-			<Filter>[HouseRank] &gt; 0</Filter>
+			<Filter>[HouseRank] &gt; 1191</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fef0d9"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[HouseRank] &gt; 1200</Filter>
+			<Filter>[HouseRank] &gt; 2383</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fdd49e"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[HouseRank] &gt; 2400</Filter>
+			<Filter>[HouseRank] &gt; 3575</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fdbb84"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[HouseRank] &gt; 3600</Filter>
+			<Filter>[HouseRank] &gt; 4767</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#fc8d59"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
-			<Filter>[HouseRank] &gt; 4800</Filter>
+			<Filter>[HouseRank] &gt; 5958</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
 			<PolygonSymbolizer fill="#e34a33"></PolygonSymbolizer>
 		</Rule>
