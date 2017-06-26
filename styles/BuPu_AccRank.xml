@@ -8,22 +8,22 @@
 		<Rule>
 			<Filter>[AccRank] &gt; 1191</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
-			<PolygonSymbolizer fill="#bfd3e6"></PolygonSymbolizer>
+			<PolygonSymbolizer fill="#b3cde3"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[AccRank] &gt; 2383</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
-			<PolygonSymbolizer fill="#9ebcda"></PolygonSymbolizer>
+			<PolygonSymbolizer fill="#8c96c6"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[AccRank] &gt; 3575</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
-			<PolygonSymbolizer fill="#8c96c6"></PolygonSymbolizer>
+			<PolygonSymbolizer fill="#8856a7"></PolygonSymbolizer>
 		</Rule>
 		<Rule>
 			<Filter>[AccRank] &gt; 4767</Filter>
 			<LineSymbolizer stroke-width="1" stroke="black"></LineSymbolizer>
-			<PolygonSymbolizer fill="#8856a7"></PolygonSymbolizer>
+			<PolygonSymbolizer fill="#810f7c"></PolygonSymbolizer>
 		</Rule>
 	</Style>
 	<Layer name="layer" srs="+init=epsg:3857">

@@ -3,7 +3,7 @@ from xmltodict import unparse
 import json
 
 colors = {
-  'BuPu': ['#edf8fb','#bfd3e6','#9ebcda','#8c96c6','#8856a7'],
+  'BuPu': ['#edf8fb','#b3cde3','#8c96c6','#8856a7','#810f7c'],
   'OrRd': ['#fef0d9','#fdd49e','#fdbb84','#fc8d59','#e34a33'],
   'RdYlGn': ['#d73027','#fc8d59','#fee08b','#d9ef8b','#91cf60']
 }
