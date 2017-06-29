@@ -45,6 +45,7 @@
 	  .ol-unselectable.ol-control.layer-switcher .panel{
 		display: block;
 		background-color: rgba(255,255,255, .7);
+		padding: 0 0.2em 0 0;
 	  }
 	  .ol-unselectable.ol-control.layer-switcher button{
 		display: none;
@@ -61,6 +62,34 @@
 	  .ol-attribution.ol-unselectable.ol-control{
 		max-width: 30%;
 		text-align: justify;
+	  }
+	  .colorpicker .buttonLegend{
+	  	background: url("arrow_down.png") no-repeat;
+		background-color: #7b98bc;
+		background-size: 100%;
+		height: 15px;
+		width: 15px;
+	  }
+	  .buttonLegend.clickLegend{
+		background: url("arrow_up.png") no-repeat;
+		background-color: #7b98bc;
+		background-size: 100%;
+		height: 15px;
+		width: 15px;
+	  }
+	  #map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-control.layer-switcher > div > button{
+	  	background: url("arrow_down.png") no-repeat;
+		background-color: #7b98bc;
+		background-size: 100%;
+		height: 15px;
+		width: 15px;
+	  }
+	  #map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-control.layer-switcher > div > button.clickOverlays{
+		background: url("arrow_up.png") no-repeat;
+		background-color: #7b98bc;
+		background-size: 100%;
+		height: 15px;
+		width: 15px;
 	  }
     </style>
     <script src="https://openlayers.org/en/v3.19.1/build/ol-debug.js" type="text/javascript"></script>
@@ -84,10 +113,35 @@
 	
 	 $(document).ready(function(e) {
 		$("#map > div > div.ol-overlaycontainer-stopevent > div.ol-attribution.ol-unselectable.ol-control > ul").prepend($("#disclaimer"));
-		var title = document.createElement('div').innerHTML = '<h3>NZ Index of Multiple Deprivation Map</h3><p>Select colour scheme for range quintiles:</p>';
+		var title = document.createElement('div');
+		title.className = 'title';
+		title.innerHTML = '<h4>NZ Index of Multiple Deprivation Map</h4>';
+		var buttonLegend = document.createElement('button');
+		buttonLegend.className = 'buttonLegend';
+		var selectionTitle = document.createElement('div');
+		selectionTitle.className = 'selectionTitle';
+		selectionTitle.innerHTML = '<p>Select colour scheme for range quintiles:</p>';
+		$(".colorpicker.ol-unselectable.ol-control").prepend(selectionTitle);
+		$(".colorpicker.ol-unselectable.ol-control").prepend(buttonLegend);
 		$(".colorpicker.ol-unselectable.ol-control").prepend(title);
-	});
-
+		
+		$(".buttonLegend").click(function(){
+				$(this).toggleClass('clickLegend');
+				$(".selectionTitle").toggle();
+				$(".table").toggle();
+		});
+		
+		var buttonOverlays = document.createElement('button');
+		buttonOverlays.className = 'buttonOverlays';
+		
+		$("#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-control.layer-switcher > div").prepend(buttonOverlays);
+		$("#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-control.layer-switcher > div > button").show();
+		
+		$(".buttonOverlays").click(function(){
+				$(this).toggleClass('clickOverlays');
+				$("#map > div > div.ol-overlaycontainer-stopevent > div.ol-unselectable.ol-control.layer-switcher > div > ul").toggle();
+		});
+		});
 	
       // Generate layers
       var layers = {
